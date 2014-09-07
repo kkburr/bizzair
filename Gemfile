@@ -23,20 +23,29 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# the following were added by Kaitlin on 7/6/14:
-gem 'rspec-rails'
+# the following were added by Kaitlin:
 gem 'guard-bundler'
-gem 'guard-rspec'
-gem 'factory_girl_rails'
+gem 'guard-rspec', '~> 4.3.1'
+       
+group :development, :test do
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'factory_girl_rails', '~> 4.2.1'
+end
 
 group :test do
-  gem 'capybara'
-end
-       
+  gem 'capybara', '~> 2.1.0'
+  gem 'faker', '~> 1.1.2'
+  gem 'database_cleaner', '~> 1.0.1'
+  gem 'launchy', '~> 2.3.0'
+  gem 'selenium-webdriver', '~> 2.39.0'
+ end
+
 group :development do
   gem 'spring' 
-  gem 'ruby_gntp'	
+  gem 'ruby_gntp', '~> 0.3.4'	
 end
+
+
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 
